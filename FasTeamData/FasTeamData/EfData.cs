@@ -46,5 +46,43 @@ namespace FasTeamData
     {
       return ed.Users.Where(u => u.FirstName == user.FirstName && u.LastName == user.LastName).ToList().First();
     }
+
+    public List<User> FindUserByRole(User user)
+    {
+      return ed.Users.Where(u => u.Role == user.Role).ToList();
+    }
+
+    public User FindUserById(User user)
+    {
+      return ed.Users.Where(u => u.UserID == user.UserID).ToList().First();
+    }
+
+    public List<User> FindUsersByLocation(User user)
+    {
+      return ed.Users.Where(u => u.Location.LocationName == user.Location.LocationName).ToList();
+    }
+
+    public int addUser(User user)
+    {
+      ed.Users.Add(user);
+      return ed.SaveChanges();
+    }
+
+    public bool UpdateUser(User user)
+    {
+      var original = ed.Users.Find(user.UserID);
+
+      if(original != null)
+      {
+        ed.Entry(original).CurrentValues.SetValues(user);
+        ed.SaveChanges();
+        return true;
+      }
+
+      else
+      {
+        return false;
+      }
+    }
   }
 }
