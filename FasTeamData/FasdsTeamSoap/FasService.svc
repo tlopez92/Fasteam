@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="FasdsTeamSoap.Service1" CodeBehind="FasService.svc.cs" %>
