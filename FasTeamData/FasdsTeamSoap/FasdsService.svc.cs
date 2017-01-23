@@ -14,7 +14,11 @@ namespace FasdsTeamSoap
     // NOTE: In order to launch WCF Test Client for testing this service, please select FasdsService.svc or FasdsService.svc.cs at the Solution Explorer and start debugging.
     public class FasdsService : IDataContract
     {
+
+        //Object from EfData class
         private readonly EfData ef = new EfData();
+
+        //Object of MapperEf class
         private readonly MapperEf mapper = new MapperEf();
 
         public int AddUser(UserDao user)

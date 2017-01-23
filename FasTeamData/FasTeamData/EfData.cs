@@ -8,6 +8,7 @@ namespace FasTeamData
 {
   public class EfData
   {
+    //Object of the Entities model
     private static FasdsTeamEntities ed = new FasdsTeamEntities();
     
     /// <summary>
@@ -20,22 +21,6 @@ namespace FasTeamData
     {
       return ed.Users.ToList();
     }
-
-    public List<State> GetStates()
-    {
-      return ed.States.ToList();
-    }
-
-    public List<Location> GetLocations()
-    {
-      return ed.Locations.ToList();
-    }
-
-    public List<Role> GetRoles()
-    {
-      return ed.Roles.ToList();
-    }
-
 
     /// <summary>
     /// Finds user by first and last name
@@ -56,7 +41,8 @@ namespace FasTeamData
     {
       return ed.Users.Where(u => u.UserID == user.UserID).ToList().First();
     }
-
+   
+    //Find users by location using lambda expressions
     public List<User> FindUsersByLocation(User user)
     {
       return ed.Users.Where(u => u.Location.LocationName == user.Location.LocationName).ToList();
@@ -67,7 +53,9 @@ namespace FasTeamData
       ed.Users.Add(user);
       return ed.SaveChanges();
     }
-
+    
+    //Updates user if the original content
+    //has been changed in any way or form
     public bool UpdateUser(User user)
     {
       var original = ed.Users.Find(user.UserID);
