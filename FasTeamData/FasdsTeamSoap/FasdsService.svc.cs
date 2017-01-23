@@ -1,19 +1,18 @@
-﻿using System;
+﻿using FasdsTeamSoap.DAO;
+using FasdsTeamSoap.Mapper;
+using FasTeamData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 using System.Text;
-using FasdsTeamSoap.DAO;
-using FasTeamData;
-using FasdsTeamSoap.Mapper;
 
 namespace FasdsTeamSoap
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "FasService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class FasService : IDataContract
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "FasdsService" in code, svc and config file together.
+    // NOTE: In order to launch WCF Test Client for testing this service, please select FasdsService.svc or FasdsService.svc.cs at the Solution Explorer and start debugging.
+    public class FasdsService : IDataContract
     {
         private readonly EfData ef = new EfData();
         private readonly MapperEf mapper = new MapperEf();
@@ -28,7 +27,7 @@ namespace FasdsTeamSoap
             var users = new List<UserDao>();
             var dataUsers = ef.GetUsers();
 
-            foreach(var item in dataUsers)
+            foreach (var item in dataUsers)
             {
                 users.Add(mapper.MapToService(item));
             }
