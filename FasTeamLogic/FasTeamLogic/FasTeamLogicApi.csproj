@@ -135,6 +135,12 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\FasdsService\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FasTeamLogicBusiness\FasTeamLogicBusiness.csproj">
+      <Project>{7E8F2BFA-3BBB-4968-A283-9D7A6BC54801}</Project>
+      <Name>FasTeamLogicBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
