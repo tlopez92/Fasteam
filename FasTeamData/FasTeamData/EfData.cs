@@ -21,7 +21,16 @@ namespace FasTeamData
     {
       return ed.Users.ToList();
     }
+    
+    public List<Role> GetRoles()
+    {
+      return ed.Roles.ToList();
+    }
 
+    public Role FindRoleByRoleName(String roleName)
+    {
+      return ed.Roles.Where(r => r.RoleName == roleName).ToList().First();
+    }
     /// <summary>
     /// Finds user by first and last name
     /// </summary>
@@ -72,5 +81,28 @@ namespace FasTeamData
         return false;
       }
     }
-  }
+
+    public int AddRole(Role role)
+    {
+      ed.Roles.Add(role);
+      return ed.SaveChanges();
+    }
+
+    public bool UpdateRole(Role role)
+    {
+        var original = ed.Roles.Find(role.RoleID);
+
+        if (original != null)
+        {
+            ed.Entry(original).CurrentValues.SetValues(role);
+            ed.SaveChanges();
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
+    }
 }
