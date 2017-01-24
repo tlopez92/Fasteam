@@ -16,8 +16,8 @@ namespace FasTeamLogic
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{action}/{status}",
+                defaults: new { controller = "index", action = RouteParameter.Optional, status = RouteParameter.Optional }
             );
         }
     }
