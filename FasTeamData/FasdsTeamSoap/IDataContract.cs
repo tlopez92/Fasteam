@@ -22,5 +22,14 @@ namespace FasdsTeamSoap
 
         [OperationContract]
         bool UpdateUser(UserDao user);
+
+        [OperationContract]
+        List<RoleDao> GetRoles();
+
+        [OperationContract]
+        int AddRole(RoleDao role);
+
+        [OperationContract]
+        bool UpdateRole(RoleDao role);
     }
 }

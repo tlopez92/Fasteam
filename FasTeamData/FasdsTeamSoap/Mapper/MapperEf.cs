@@ -14,6 +14,10 @@ namespace FasdsTeamSoap.Mapper
 
         private readonly MapperConfiguration UserMapperReverse = new MapperConfiguration(u => u.CreateMap<UserDao, User>());
 
+        private readonly MapperConfiguration RoleMapper = new MapperConfiguration(r => r.CreateMap<Role, RoleDao>());
+
+        private readonly MapperConfiguration RoleMapperReverse = new MapperConfiguration(r => r.CreateMap<RoleDao, Role>());
+
         public UserDao MapToService(User user)
         {
             var mapper = UserMapper.CreateMapper();
@@ -24,6 +28,18 @@ namespace FasdsTeamSoap.Mapper
         {
             var mapper = UserMapperReverse.CreateMapper();
             return mapper.Map<User>(user);
+        }
+
+        public RoleDao MapToService(Role role)
+        {
+            var mapper = RoleMapper.CreateMapper();
+            return mapper.Map<RoleDao>(role);
+        }
+
+        public Role MapToData(RoleDao roleDao)
+        {
+            var mapper = RoleMapperReverse.CreateMapper();
+            return mapper.Map<Role>(roleDao);
         }
     }
 }

@@ -43,5 +43,27 @@ namespace FasdsTeamSoap
         {
             return ef.UpdateUser(mapper.MapToData(user));
         }
+
+        public List<RoleDao> GetRoles()
+        {
+            var roles = new List<RoleDao>();
+            var dataRoles = ef.GetRoles();
+
+            foreach (var item in dataRoles)
+            {
+                roles.Add(mapper.MapToService(item));
+            }
+
+            return roles;
+        }
+        public int AddRole(RoleDao role)
+        {
+            return ef.AddRole(mapper.MapToData(role));
+        }
+
+        public bool UpdateRole(RoleDao role)
+        {
+            return ef.UpdateRole(mapper.MapToData(role));
+        }
     }
 }
