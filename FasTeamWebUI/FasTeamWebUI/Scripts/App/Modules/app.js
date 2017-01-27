@@ -10,4 +10,5 @@
             templateUrl: 'modules/User/view.html'
         });
     }]);
+
 })(window.ahApp || (window.ahApp = {}));
