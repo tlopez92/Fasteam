@@ -119,9 +119,12 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+<<<<<<< HEAD
+=======
     <Content Include="Scripts\App\Controllers\appcontroller.js" />
     <Content Include="Scripts\App\Modules\app.js" />
     <Content Include="Scripts\App\Services\dataservice.js" />
+>>>>>>> 2d326afae0d3703c0f066a83b172ec69c9b39e06
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />
