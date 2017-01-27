@@ -250,3 +250,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Angular localization files
+FasTeamWebUI/FasTeamWebUI/Scripts/i18n/
